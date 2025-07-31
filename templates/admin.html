@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Admin</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Usuários</h1>
+    <table>
+      <tr><th>Email</th><th>Senha</th></tr>
+      {% for u in usuarios %}
+        <tr><td>{{ u[1] }}</td><td>{{ u[2] }}</td></tr>
+      {% endfor %}
+    </table>
+    <h1>Formulários de Vaga</h1>
+    <table>
+      <tr>
+        <th>Email</th><th>Vaga</th><th>Escolaridade</th><th>Estado Civil</th>
+        <th>Motivo</th><th>Disponibilidade</th><th>Nome</th><th>Telefone</th><th>Email Contato</th>
+      </tr>
+      {% for c in candidaturas %}
+        <tr>
+          <td>{{ c[1] }}</td><td>{{ c[2] }}</td><td>{{ c[3] }}</td><td>{{ c[4] }}</td>
+          <td>{{ c[5] }}</td><td>{{ c[6] }}</td><td>{{ c[7] }}</td><td>{{ c[8] }}</td><td>{{ c[9] }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+    <a href="/logout">Sair</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Admin</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Login Admin</h1>
+    {% if msg %}<p class="msg">{{ msg }}</p>{% endif %}
+    <form method="POST">
+      <input type="email" name="email" placeholder="Email admin" required>
+      <input type="password" name="senha" placeholder="Senha admin" required>
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+</body>
+</html>

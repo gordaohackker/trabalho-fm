@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Vagas</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Formulário de Vagas</h1>
+    {% if msg %}<p class="msg">{{ msg }}</p>{% endif %}
+    <form method="POST">
+      <select name="vaga" required>
+        <option value="">Selecione a vaga</option>
+        <option>Caixa</option>
+        <option>Gerente</option>
+        <option>Repositor</option>
+        <option>Marketing</option>
+        <option>Modelo</option>
+      </select>
+      <select name="escolaridade" required>
+        <option value="">Escolaridade</option>
+        <option>Ensino Fundamental</option>
+        <option>Ensino Médio</option>
+        <option>Superior</option>
+      </select>
+      <select name="estado_civil" required>
+        <option value="">Estado Civil</option>
+        <option>Solteiro(a)</option>
+        <option>Casado(a)</option>
+        <option>Divorciado(a)</option>
+      </select>
+      <input type="text" name="motivo" placeholder="Por que quer trabalhar conosco?" required>
+      <input type="text" name="disponibilidade" placeholder="Tem disponibilidade de horário?" required>
+      <input type="text" name="nome" placeholder="Nome completo" required>
+      <input type="text" name="telefone" placeholder="Telefone" required>
+      <input type="email" name="email_contato" placeholder="Email de contato" required>
+      <button type="submit">Enviar</button>
+    </form>
+    <a href="/logout">Sair</a>
+  </div>
+</body>
+</html>

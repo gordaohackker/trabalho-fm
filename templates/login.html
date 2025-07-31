@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login ou Cadastro</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Bem-vindo</h1>
+    {% if msg %}<p class="msg">{{ msg }}</p>{% endif %}
+    <form method="POST">
+      <input type="email" name="email" placeholder="Seu email" required>
+      <input type="password" name="senha" placeholder="Sua senha" required>
+      <button type="submit">Entrar / Cadastrar</button>
+    </form>
+    <a href="/admin">Acesso Admin</a>
+  </div>
+</body>
+</html>
