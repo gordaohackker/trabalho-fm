@@ -88,7 +88,7 @@ def vagas():
                   (user_email, vaga, escolaridade, estado_civil, motivo, disponibilidade, nome, telefone, email_contato))
         conn.commit()
         conn.close()
-        return render_template("vagas.html", msg="Informações enviadas com sucesso!")
+        return render_template("vagas.html", msg="Informações enviadas com sucesso em breve entraremos em contato!")
     
     return render_template("vagas.html")
 
@@ -101,7 +101,7 @@ def admin():
             session['admin'] = True
             return redirect(url_for('painel'))
         else:
-            return render_template("admin_login.html", msg="Credenciais incorretas.")
+            return render_template("admin_login.html", msg="Credenciais incorretas,voce esta sendo monitorado.")
     return render_template("admin_login.html")
 
 @app.route("/painel")
